@@ -22,8 +22,11 @@ def train():
         pre_trained_model= tf.keras.applications.InceptionResNetV2(include_top=False, weights="imagenet", input_shape=(200, 200, 3), classes=1000,classifier_activation="softmax",)
     if model_name== "xception":
         pre_trained_model= tf.keras.applications.Xception(include_top=False, weights="imagenet", input_shape=(200, 200, 3), classes=1000,classifier_activation="softmax",)
+    #making the layers of the pretrained models non- trainable
     pre_trained_model.trainable = False
+    #Storing the total number of layers in the pre trained model
     total = len(pre_trained_model.layers)
+    #Storing the starting layer from which the pre trained model can be trained
     starting_layer=int(config.starting_layer)
     for i in range(total-starting_layer,total):
         pre_trained_model.layers[i].trainable = True
