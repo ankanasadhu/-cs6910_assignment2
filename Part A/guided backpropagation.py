@@ -27,6 +27,7 @@ model=load_model('C:\\Users\\DELL\\Desktop\\Deep Learning\\CNN\\My_Model')
 folder_path = 'C:\\Users\\DELL\\Desktop\\Deep Learning\\CNN\\dataaug\\'
 images=[]
 true_image=[]
+#array storing 10 random neuron numbers of the 5th convolutional layer
 neuron_no_arr=[6, 8, 10 , 14 , 16 , 19, 22, 25, 28 , 30]
 for i in range (10):
     
