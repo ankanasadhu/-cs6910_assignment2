@@ -13,7 +13,7 @@ def train():
     wandb.run.name = "model_name_" + str(config.model_name) + "isMoreDense"+str(config.more_dense)+"trainable_last_no_of_layers_"+str(config.starting_layer)+"_epoch_"+ str(int(config.epochs))
     #Storing the model name 
     model_name= config.model_name
-    # Using imagenet weights 
+    # Using imagenet weights and initializing input shapes for the rquired pre trained model
     if model_name== "resnet50":
         pre_trained_model= tf.keras.applications.resnet_v2.ResNet152V2(include_top=False, weights="imagenet", input_shape=(200,200, 3), classes=1000,classifier_activation="softmax",)
     if model_name== "inceptionv3":
@@ -54,7 +54,6 @@ def train():
         shuffle=True,
         callbacks=[WandbCallback()]
         )
-
-    
+# Calling function train()
 train()
     
