@@ -1,0 +1,31 @@
+program: train.py
+method: random
+metric:
+  name: validation_loss
+  goal: minimize
+metric:
+  name: validation_accuracy
+  goal: maximize
+metric: 
+  name: training_loss
+  goal: minimize
+metric:
+  name: training_accuracy
+  goal: maximize
+parameters:
+  epochs:
+    distribution: int_uniform
+    min: 0
+    max: 1
+  learning_rate:
+    min: 0.001
+    max: 0.01
+  starting_layer:
+    distribution: int_uniform
+    min: 40
+    max: 41
+  model_name:
+    values: ["resnet50", "inceptionresnetv2", "inceptionv3", "xception"]
+  more_dense:
+    values: [0, 1]
+  
