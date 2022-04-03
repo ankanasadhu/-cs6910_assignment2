@@ -15,7 +15,8 @@
 
 # How is the model trained?
 *    **training_data** and **validation_data** are obtained and the model consisting of a Random Crop layer, Input tensor, the pre_trained model, an optional dense layer and the final output dense layer.
-*  model.fit(training_data, epochs=int(config.epochs),validation_data=validation_data, shuffle=True, callbacks=[WandbCallback()])
+*  The model is trained using the command:
+   model.fit(training_data, epochs=int(config.epochs),validation_data=validation_data, shuffle=True, callbacks=[WandbCallback()])
 
 # Acknowledgement:
 * The entire assignment has been developed from the lecture videos and slides of Dr. Mitesh Khapra, Indian Institute of Technology Madras: http://cse.iitm.ac.in/~miteshk/CS6910.html#schedule
